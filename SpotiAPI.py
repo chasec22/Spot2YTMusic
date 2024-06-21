@@ -43,6 +43,7 @@ def get_playlist_tracks(token, spotID):
      return json_result["tracks"]
 
 token = get_token()
-res = get_playlist_tracks(token, "2Uqk27clDOfOoRArDXmpxC?si=79339a63358c406a")
+res = get_playlist_tracks(token, "4CEfz1h167j8BqsVve7DbR?si=4bb3be2481a74f34")
+file = open("txtFiles/songs.txt", "w")
 for x in range(0, res["total"]):
-     print(res["items"][x]["track"]["name"] + " - " + str(res["items"][x]["track"]["artists"][0]["name"]))
+     file.write(res["items"][x]["track"]["name"] + " - " + str(res["items"][x]["track"]["artists"][0]["name"]) + "\n")
